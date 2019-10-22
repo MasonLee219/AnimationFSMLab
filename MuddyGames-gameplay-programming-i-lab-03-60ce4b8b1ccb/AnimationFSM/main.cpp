@@ -46,20 +46,37 @@ int main()
 				window.close();
 				break;
 			case sf::Event::KeyPressed:
-				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+				if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
 				{
 					input.setCurrent(Input::Action::LEFT);
 				}
-				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
 				{
 					input.setCurrent(Input::Action::RIGHT);
 				}
-				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
 				{
 					input.setCurrent(Input::Action::UP);
 				}
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+				{
+					input.setCurrent(Input::Action::JUMPING);
+				}
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::B))
+				{
+					input.setCurrent(Input::Action::HAMMERING);
+				}
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::N))
+				{
+					input.setCurrent(Input::Action::SHOVELLING);
+				}
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::M))
+				{
+					input.setCurrent(Input::Action::SWORDSMANSHIP);
+				}
 				break;
 			default:
+				player.handleInput(input);
 				input.setCurrent(Input::Action::IDLE);
 				break;
 			}

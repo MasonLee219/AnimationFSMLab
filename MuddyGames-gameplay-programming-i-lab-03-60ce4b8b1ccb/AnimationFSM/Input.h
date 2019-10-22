@@ -11,7 +11,11 @@ public:
 		IDLE,
 		UP,
 		LEFT,
-		RIGHT
+		RIGHT,
+		JUMPING,
+		HAMMERING,
+		SHOVELLING,
+		SWORDSMANSHIP,
 	};
 
 	void setCurrent(Action);

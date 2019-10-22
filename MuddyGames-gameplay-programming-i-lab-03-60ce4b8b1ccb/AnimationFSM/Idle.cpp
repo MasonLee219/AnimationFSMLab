@@ -30,3 +30,25 @@ void Idle::walking(PlayerFSM* a)
 	a->setCurrent(new Walking());
 	delete this;
 }
+
+void Idle::swordsmanship(PlayerFSM* a)
+{
+	std::cout << "Idle -> Swordsmanship" << std::endl;
+	a->setCurrent(new Swordsmanship());
+	delete this;
+}
+
+void Idle::shovelling(PlayerFSM* a)
+{
+	std::cout << "Idle -> Shovelling" << std::endl;
+	a->setCurrent(new Shovelling());
+	delete this;
+}
+
+void Idle::hammering(PlayerFSM* a)
+{
+	std::cout << "Idle -> Hammering" << std::endl;
+	a->setCurrent(new Hammering());
+	delete this;
+}
+

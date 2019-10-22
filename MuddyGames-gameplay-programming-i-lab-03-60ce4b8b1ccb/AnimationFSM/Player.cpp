@@ -40,13 +40,25 @@ void Player::handleInput(Input in)
 		break;
 	case Input::Action::LEFT:
 		//std::cout << "Player Left" << std::endl;
-		m_state.jumping();
+		m_state.walking();
 		break;
 	case Input::Action::RIGHT:
 		//std::cout << "Player Idling" << std::endl;
+		m_state.walking();
+		break;
+	case Input::Action::JUMPING:
 		m_state.jumping();
 		break;
-	default:
+	case Input::Action::HAMMERING:
+		m_state.hammering();
+		break;
+	case Input::Action::SHOVELLING:
+		m_state.shovelling();
+		break;
+	case Input::Action::SWORDSMANSHIP:
+		m_state.swordsmanship();
+		break;
+	default:		
 		break;
 	}
 }
